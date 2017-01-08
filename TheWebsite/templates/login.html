@@ -1,0 +1,29 @@
+<!--Code by Sentdex and modified by me.-->
+
+{% extends "navbar.html" %}
+
+
+{% block content %}
+     <div class="container">
+        <h3>Please login:</h3>
+        <br>
+        <form action="" class="form-inline" method="post">
+            <label>Username:</label>
+            <input type="text" class="form-control" placeholder="Username" name="username" value="{{request.form.username}}">
+            <br>
+            <label>Password:</label>
+            <input type="password" class="form-control" placeholder="Password" name="password" value="{{request.form.password}}">
+            <br>
+            <input class="btn" type="submit" value="Login" style="background-color:#FFD166;color:#000">
+        </form>
+
+        <div class="container">
+           <br><p>No account? <a href='/register'>Register here</a></p>
+           <p><a href='/forgot-password/'>Forgot Password?</a></p>
+           <br>
+        </div>
+
+         <p>{{error}}</p>
+
+    </div>
+{% endblock %}

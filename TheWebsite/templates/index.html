@@ -1,0 +1,24 @@
+{% extends "navbar.html" %}
+<head>
+    <meta charset="UTF-8">
+    <title>INDEX</title>
+</head>
+
+{% block content %}
+    <div class="container">
+        <h1>Posts</h1>
+        <p>This place is public!</p>
+        <br>
+        <a href="/create_post"><input class="btn" type="submit" value="Create Post" style="background-color:#FFD166;color:#000"></a>
+    </div>
+
+
+        {% for post in posts%}
+            <div class="container" style="border: 1px solid black; border-radius: 3px; margin-top: 5px; max-width: 500px;">
+                <h2 style="display: inline-block;">{{post[0]}}</h2>
+                <p>{{post[1]}}</p>
+            </div>
+        {% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,65 @@
+<!--Code by Sentdex and modified by me.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <title>Home</title>
+</head>
+
+
+<body>
+    <div class="navbar-fixed">
+        <nav style="background-color:#003F72">
+				<div class="nav-wrapper container">
+					<a href="/" class="brand-logo"><img class="img-responsive" style="width:50px; height;50px; margin-top:5px" src="/static/image/mainlogowhitethick.jpg"></a>
+					<a href="#" data-activates="navsidebar" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+					<ul class="right hide-on-med-and-down">
+                        <ul class="side-nav" style="left: -250px;">
+
+                            {% if session.logged_in %}
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/community">Community</a></li>
+                            <li>Logged in as <span style="text-transform: uppercase;">{{session.username}}</span></li>
+				            <li><a href="/logout"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>Logout</a></li>
+                            {% else %}
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/community">Community</a></li>
+				            <li><a href="/login"><span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>Login</a></li>
+                            <li><a href="/register"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>Sign up</a></li>
+                            {% endif %}
+                        </ul>
+
+					</ul>
+                </div>
+        </nav>
+    </div>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning alert-dismissible container" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    {{message}}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}
+    {% endblock %}
+
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}">
+
+    </script>
+</body>
+
+</html>

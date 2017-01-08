@@ -1,0 +1,14 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Share your thoughts and ideas!</h1>
+        <p>On this site you can share anything that comes to mind and
+            <br>
+            let others take part of it!</p>
+
+        {% if session.logged_in %}
+            <a href="/create_post"><input class="btn" type="submit" value="Get Started" style="background-color:#FFD166;color:#000"></a>
+        {% endif %}
+    </div>
+{% endblock %}

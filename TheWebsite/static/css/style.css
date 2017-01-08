@@ -1,0 +1,27 @@
+ul {
+    display: inline-block;
+    list-style-type: none;
+}
+
+li {
+    color: white;
+    font-weight: bold;
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 30px;
+}
+
+li a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+li a:hover, li a:active {
+    color: white;
+    text-decoration: none;
+}
+
+.brand-logo {
+    display: inline-block;
+}

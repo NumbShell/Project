@@ -1,0 +1,50 @@
+{% extends "navbar.html" %}
+
+
+{% block content %}
+    <div class="container">
+		  <h4>Register</h4>
+		  <br>
+
+
+
+			<form method=post action="/register/">
+			  <dl>
+
+  <dt><label for="username">Username</label>
+  <dd><input class="form-control" id="username" name="username" type="text" value="{{request.form.username}}">
+
+  </dd>
+
+
+  <dt><label for="email">Email Address</label>
+  <dd><input class="form-control" id="email" name="email" type="text" value="{{request.form.email}}">
+
+  </dd>
+
+
+  <dt><label for="password">Password</label>
+  <dd><input class="form-control" id="password" name="password" type="password" value="{{request.form.password}}">
+
+  </dd>
+
+
+  <dt><label for="confirm">Repeat Password</label>
+  <dd><input class="form-control" id="confirm" name="confirm" type="password" value="{{request.form.confirm}}">
+
+  </dd>
+
+
+				<p>By registering, you accept no terms at all and are free to do <b>whatever</b> you'd like.</p>
+
+
+			  </dl>
+			  <p><input class="btn btn-primary" type=submit value=Register>
+			</form>
+
+		<div class="container">
+		   <br>
+
+		  </div>
+		</div>
+{% endblock %}
