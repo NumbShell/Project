@@ -1,0 +1,1 @@
+A small site in which you can login and share quotes for others to see.
