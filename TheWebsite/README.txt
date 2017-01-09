@@ -1,1 +1,1 @@
-A small site in which you can login and share quotes for others to see.
+A small site in which you can share thoughts and ideas.
